@@ -284,7 +284,7 @@ Notifications
 # Maintained By
 
 ```
-@MrigeshDeshpande and @ChakreshChakshu
+Skillyards Engineering Team
 ```
 
 ---

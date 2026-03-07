@@ -1,36 +1,248 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Here is a **clean, professional README.md** tailored for your **Skillyards ERP project**. It replaces the generic Next.js template and aligns with the architecture and setup you built.
 
-## Getting Started
+You can paste this directly into `README.md`.
 
-First, run the development server:
+---
+
+# Skillyards ERP
+
+Skillyards ERP is an internal management system designed to support operations such as CRM, enquiries, hiring, analytics, and administrative workflows.
+
+The application is built as a full-stack system using modern web technologies.
+
+## Tech Stack
+
+* Next.js — frontend + API routes
+* Drizzle ORM — database ORM
+* Neon — database hosting
+* Tailwind CSS — styling
+* React Hook Form + Zod — form handling and validation
+
+---
+
+# Project Structure
+
+```
+src
+ ├ app
+ │   ├ (admin)        → Admin dashboard routes
+ │   ├ (auth)         → Authentication pages
+ │   └ api            → Backend API routes
+ │
+ ├ components         → Reusable UI components
+ ├ db                 → Database schema and client
+ │   ├ index.js
+ │   └ schema
+ │
+ ├ lib                → External integrations
+ ├ services           → Business logic layer
+ ├ validations        → Zod validation schemas
+ └ types              → Shared types
+```
+
+---
+
+# Getting Started
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/MrigeshDeshpande/Skillyards-ERP.git
+cd skillyards-erp
+```
+
+---
+
+## 2. Setup Environment Variables
+
+Create a `.env` file.
+
+Example:
+
+```
+DATABASE_URL=postgresql://USER:PASSWORD@HOST/DATABASE?sslmode=require
+```
+
+Example with Neon:
+
+```
+DATABASE_URL=postgresql://neondb_owner:password@ep-xxxxx.aws.neon.tech/neondb?sslmode=require
+```
+
+---
+
+## 3. First-Time Setup
+
+Run the setup script:
+
+```bash
+npm run setup
+```
+
+This will automatically:
+
+```
+install dependencies
+apply database schema
+```
+
+---
+
+## 4. Start Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open in browser:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# Database Commands
 
-To learn more about Next.js, take a look at the following resources:
+Generate migration after schema changes:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run db:generate
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Apply migration to database:
 
-## Deploy on Vercel
+```bash
+npm run db:push
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# API Verification
+
+To confirm the backend is working, open:
+
+```
+http://localhost:3000/api/test
+```
+
+Expected response:
+
+```json
+{
+  "success": true,
+  "data": []
+}
+```
+
+This confirms:
+
+```
+Next.js API
+↓
+Drizzle ORM
+↓
+Neon PostgreSQL
+```
+
+---
+
+# Development Workflow
+
+Feature development follows this pipeline:
+
+```
+Schema
+↓
+Service
+↓
+API Route
+↓
+UI
+```
+
+Example:
+
+```
+src/db/schema
+src/services
+src/app/api
+src/app/(admin)
+```
+
+---
+
+# Useful Commands
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+Generate migrations:
+
+```bash
+npm run db:generate
+```
+
+Push schema to database:
+
+```bash
+npm run db:push
+```
+
+Clear Next.js cache:
+
+```bash
+npm run clean
+```
+
+---
+
+# Engineering Principles
+
+The system follows:
+
+```
+Layered architecture
+Service-based logic
+RBAC permissions model
+UUID primary keys
+Modular domain design
+```
+
+This ensures the system remains scalable as the ERP grows.
+
+---
+
+# Deployment
+
+Recommended deployment stack:
+
+* Vercel — application hosting
+* Neon — database
+
+Deployment is typically handled through GitHub → Vercel CI/CD.
+
+---
+
+# Documentation
+
+Project documentation is available in the `docs` directory:
+
+```
+docs/
+ ├ LOCAL_SETUP.md
+ ├ ARCHITECTURE.md
+ ├ DATABASE_ARCHITECTURE.md
+ ├ DEVELOPMENT_WORKFLOW.md
+```
+
+---
+
+# Maintainers
+
+Skillyards Engineering Team
+
+---
