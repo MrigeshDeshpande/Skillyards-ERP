@@ -6,11 +6,24 @@ The application is built as a full-stack system using modern web technologies.
 
 ## Tech Stack
 
-* Next.js — frontend + API routes
-* Drizzle ORM — database ORM
-* Neon — database hosting
-* Tailwind CSS — styling
-* React Hook Form + Zod — form handling and validation
+* Next.js
+* Drizzle ORM
+* PostgreSQL
+* Neon
+* Tailwind CSS
+* React Hook Form
+* Shadcn UI
+* Zod
+
+## Features
+
+* Admin dashboard
+* Programme management
+* Job roles and applications
+* Marketing analytics
+* QR code tracking
+* Notifications system
+* Role-based access control (RBAC)
 
 ---
 
