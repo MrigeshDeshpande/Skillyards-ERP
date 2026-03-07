@@ -1,9 +1,3 @@
-Here is a **clean, professional README.md** tailored for your **Skillyards ERP project**. It replaces the generic Next.js template and aligns with the architecture and setup you built.
-
-You can paste this directly into `README.md`.
-
----
-
 # Skillyards ERP
 
 Skillyards ERP is an internal management system designed to support operations such as CRM, enquiries, hiring, analytics, and administrative workflows.
